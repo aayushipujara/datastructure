@@ -67,7 +67,7 @@ void main()
                delete_node();
                break;
         }
-    }while(op!=10);
+    }while(option!=10);
 }
 
 void create_ll()
