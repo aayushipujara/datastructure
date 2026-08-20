@@ -22,7 +22,7 @@ void main()
     int option;
     do
     {
-        printf("-------Main Menu-------")
+        printf("-------Main Menu-------");
         printf("\n 1. Create linked list");
         printf("\n 2. Display linked list");
         printf("\n 3. Insert a node in begining");
@@ -40,7 +40,7 @@ void main()
         {
            case 1:
                create_ll();
-               printf("\nLINKED LIST CREATED")
+               printf("\nLINKED LIST CREATED");
                break;
            case 2:
                display();
