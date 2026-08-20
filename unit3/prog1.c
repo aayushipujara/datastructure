@@ -69,3 +69,75 @@ void main()
         }
     }while(op!=10);
 }
+
+void create_ll()
+{
+    struct node *new_node,*ptr;
+    int num;
+    printf("\nEnter -1 to end");
+    printf("\nEnter the data:");
+    scanf("%d",&num);
+    while (num!=-1)
+    {
+        new_node=(struct node*)malloc(sizeof(struct node));
+        new_node->data=num;
+        if (start==NULL)
+            {
+            new_node->next=NULL;
+            start=new_node;
+            }
+        else
+            {
+                ptr=start;
+                while(ptr->next!=NULL)
+                {
+                   ptr=ptr->next;
+                }
+                ptr->next=new_node;
+                new_node->next=NULL;
+            }
+            printf("Enter the data:");
+            scanf("%d",&num);
+}
+}
+
+void display()
+{
+    struct node *ptr;
+    ptr=start;
+    while (ptr!=NULL)
+    {
+        printf("\t %d",ptr->data);
+        ptr=ptr->next;
+    }
+}
+
+void insert_beg()
+{
+
+}
+void insert_end()
+{
+
+}
+void insert_before()
+{
+
+}
+void insert_after()
+{
+
+}
+void delete_beg()
+{
+
+}
+void delete_end()
+{
+
+}
+void delete_node()
+{
+
+}
+
