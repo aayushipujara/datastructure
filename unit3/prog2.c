@@ -55,7 +55,7 @@ void create_ll()
     struct node *new_node,*ptr;
     int num;
     printf("\n Enter -1 to end");
-    printf("\nEnter the data");
+    printf("\nEnter the data:");
     scanf("%d", &num);
     while(num!=-1)
     {
@@ -217,7 +217,7 @@ void delete_node()
        if(ptr==NULL)
        {
         printf("\nValue not found!");
-        return start;
+        return;
        }
        if(ptr->prev==NULL)
        {
@@ -226,6 +226,7 @@ void delete_node()
         {
             start->prev=NULL;
         }
+       }
         else
         {
             //Connect previous node to next node
@@ -236,9 +237,8 @@ void delete_node()
                 ptr->next->prev=ptr->prev;
             }
         }
-       }
+
        free(ptr);
        printf("\n Node deleted succesfully");
-
 
 }
