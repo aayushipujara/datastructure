@@ -1,6 +1,6 @@
 //DOUBLY LINKEDLIST
 #include <stdio.h>
-#include <malooc.h>
+#include <malloc.h>
 
 struct node {
     struct node *next;
@@ -75,13 +75,15 @@ void create_ll()
                 while(ptr->next != NULL)
                     {
                         ptr = ptr->next;
-                         ptr->next = new_node;
-                         new_node->prev=ptr;
-                        new_node->next = NULL;
                     }
-                 printf("Enter the data:");
-                 scanf("%d", &num);
+                     ptr->next = new_node;
+                     new_node->prev=ptr;
+                     new_node->next = NULL;
+
         }
+        printf("Enter the data:");
+        scanf("%d", &num);
+
     }
 }
 
@@ -213,7 +215,30 @@ void delete_node()
            ptr = ptr -> next;
        }
        if(ptr==NULL)
-        //left
+       {
+        printf("\nValue not found!");
+        return start;
+       }
+       if(ptr->prev==NULL)
+       {
+        start=ptr->next;
+        if (start!=NULL)
+        {
+            start->prev=NULL;
+        }
+        else
+        {
+            //Connect previous node to next node
+            ptr->prev->next=ptr->next;
+            //Connect next node to previous mode
+            if(ptr->next!=NULL)
+            {
+                ptr->next->prev=ptr->prev;
+            }
+        }
+       }
        free(ptr);
+       printf("\n Node deleted succesfully");
+
 
 }
